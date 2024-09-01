@@ -1,0 +1,26 @@
+.banner-about {
+    background-image: url("../images/bannerAbout.png"); 
+    background-size: cover;
+    background-position: center;
+    height: 230px; 
+    border-radius: 15px;
+    margin: 20px auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 80%;
+}
+
+/* Media query pour les tablettes */
+@media (max-width: 768px) {
+    .banner-about {
+        height: 200px;
+        width: 90%;
+    }
+}
+
+/* Media query pour les mobiles */
+@media (max-width: 480px) {
+    .banner-about {
+        height: 150px;
+        width: 95%;
+    }
+}

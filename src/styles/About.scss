@@ -1,0 +1,49 @@
+// Variables pour les couleurs
+$primary-color: #ff6060;
+$secondary-color: #f7f7f7;
+$text-color: white;
+
+
+.about-content {
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+.collapse {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+
+    &-title {
+        background-color: $primary-color;
+        color: $text-color;
+        padding: 15px 20px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 10px;
+    }
+
+    &-content {
+        padding: 15px 20px;
+        background-color: $secondary-color;
+        border-radius: 10px;
+        display: none; 
+        border-top: 1px solid $primary-color;
+    }
+
+    &.open {
+        .collapse-content {
+            display: block;
+        }
+
+        .collapse-title::after {
+            transform: rotate(180deg); 
+        }
+    }
+}
