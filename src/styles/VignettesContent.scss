@@ -1,0 +1,93 @@
+.location-details-container{
+display: flex;
+width: 100%;
+justify-content: center;
+height: 270px;
+margin-top: 20px;
+
+.location-details {
+
+    display: flex;
+    justify-content: space-between;
+    width: 63%;
+    align-items: center;
+    height: 180px;
+
+    // Style pour le titre et le p
+    .titreAndTags h1 {
+      font-size: 2.5rem;  
+      color: #FF6F61;  
+      font-weight: bold;  
+      margin: 10px auto 0 auto;
+    }
+  
+    .titreAndTags p{
+        font-size: 1.5em;
+        margin: 15px auto 25px auto;
+    }
+    
+    // Style pour chaque tag
+    .tag {
+      background-color: #FF6F61;  
+      color: white;  
+      border-radius: 20px;  
+      padding: 5px 19px;  
+      font-size: 1.1rem;  
+      font-weight: bold;  
+      text-align: center;  
+      margin: 15px 25px 15px 0;
+    }
+
+    .photoAndStars {
+        display: flex;
+        flex-direction: column;  
+        align-items: center;  
+        
+      }
+      
+      .host-info {
+        display: flex;
+        align-items: center;  
+        justify-content: center;  
+        gap: 10px;  
+        margin-bottom: 26px;  
+      }
+      
+      .host-name {
+        color: #FF6F61;
+        font-size: 1.3rem;
+      }
+      
+      .host-picture {
+        border-radius: 50%;
+        object-fit: cover;
+        width: 75px;  
+        height: 75px;  
+        margin-left: 10px;
+      }
+      
+      .rating {
+        display: flex;
+        gap: 5px;  
+        justify-content: center;  
+        font-size: 1.5rem; 
+        align-items: center;
+      }
+      
+      .star {
+        color: #e3e3e3;  
+        font-size: 1.5em;
+      }
+      
+      .star.filled {
+        color: #FF6F61;  
+        font-size: 1.5em;
+      }
+      
+      
+      
+
+
+
+  }
+}

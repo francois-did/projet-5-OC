@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/About';
 import NotFound from './components/NotFound';
-import LocationDetails from './components/LocationDetails'; // Import du nouveau composant
+import LocationDetails from './components/LocationDetails';
+import './App.css';
+ 
 
 function App() {
   return (
@@ -11,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/location/:id" element={<LocationDetails />} /> {/* Nouvelle route */}
+        <Route path="/location/:id" element={<LocationDetails />} /> 
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

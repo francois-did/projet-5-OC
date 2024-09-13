@@ -5,6 +5,9 @@ import Header from './Header';
 import BannerAbout from './BannerAbout';
 import FooterMax from './footerMax';
 
+
+
+
 function About() {
     return (
         <>
@@ -30,10 +33,15 @@ function About() {
                 />
             </div>
             
+            
+        
+
         </div>
         <FooterMax />
         </>
+        
     );
+    
 }
 
 

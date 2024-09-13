@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import '../styles/CollapseVignettes.scss';
 
-function Collapse({ title, content }) {
+function CollapseVignettes({ title, content }) {
     const [isOpen, setIsOpen] = useState(false);
 
     // Fonction qui change l'état entre ouvert et fermé
@@ -45,4 +46,4 @@ function Collapse({ title, content }) {
     );
 }
 
-export default Collapse;
+export default CollapseVignettes;

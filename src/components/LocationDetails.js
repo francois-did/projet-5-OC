@@ -1,28 +1,55 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import data from '../data/logementsJSON.json'; // Assure-toi que le chemin est correct
+import data from '../data/logementsJSON.json';
+import '../styles/LocationDetails.scss';
+import HeaderVignette from './HeaderVignettes';
+import '../styles/HeaderVignettes.scss'
+import FooterMax from './footerMax';
+import '../styles/Collapse.scss';
+import Carousel from './Carousel'
+import VignettesContent from './VignettesContent';
+import Collapse from './Collapse';
+
 
 function LocationDetails() {
-  const { id } = useParams();
-  const location = data.find(item => item.id === id);
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  return(
+    <>
+      <HeaderVignette />
 
-  if (!location) {
-    return <div>Location not found</div>;
-  }
+      <Carousel />
+    <VignettesContent />
 
-  return (
-    <div className="location-details">
-      <h1>{location.title}</h1>
-      <img src={location.cover} alt={location.title} />
-      <p>{location.description}</p>
-      <ul>
-        {location.equipments.map((equipment, index) => (
-          <li key={index}>{equipment}</li>
-        ))}
-      </ul>
-      {/* Afficher d'autres détails comme les images supplémentaires, le nom de l'hôte, la note, etc. */}
-    </div>
-  );
+    <Collapse 
+                    title="Fiabilité" 
+                    content="Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes." 
+                />
+
+
+
+    <Collapse 
+                    title="Sécurité" 
+                    content="La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes." 
+                />
+      
+      <FooterMax />
+</>
+ ) 
+ 
 }
 
 export default LocationDetails;
