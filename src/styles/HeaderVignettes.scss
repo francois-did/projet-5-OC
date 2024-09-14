@@ -6,6 +6,13 @@
   background-color: #fff;
   width: 73%;
   margin: 40px auto;
+
+  h1 img {
+    height: 100px;
+    vertical-align: middle; /* Assure un alignement vertical */
+    margin-bottom: -10px; /* Ajuste la position vers le bas */
+    margin-top: 50px;
+  }
   
   /* Media query pour les tablettes */
   @media (max-width: 768px) {
