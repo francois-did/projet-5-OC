@@ -4,6 +4,8 @@ import '../styles/About.scss';
 import Header from './Header';
 import BannerAbout from './BannerAbout';
 import FooterMax from './footerMax';
+import '../styles/Collapse.scss';
+import '../styles/Header.scss';
 
 
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/Header.scss'; 
+import '../styles/HeaderVignettes.scss'; // Utilise le bon fichier de styles
 
-function Header() {
+function HeaderVignette() {
   return (
-    <header className="header">
+    <header className="header-vignette">
       <div className="header-logo">
         <h1>K<span className="logo-icon">a</span>sa</h1> 
       </div>
@@ -18,4 +18,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default HeaderVignette;

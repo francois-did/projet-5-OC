@@ -32,6 +32,7 @@ function LocationDetails() {
     </div>
 
      {/* Affichage de l'hôte et du rating */}
+     
      <div className="photoAndStars">
   <div className="host-info">
     <p className="host-name">
@@ -51,6 +52,7 @@ function LocationDetails() {
 
     </div>
     </div>
+    
   );
 }
 

@@ -7,7 +7,7 @@ function CollapseVignettes({ title, content }) {
     // Fonction qui change l'état entre ouvert et fermé
     const toggleCollapse = () => {
         setIsOpen(!isOpen);
-    };
+    }; 
 
     // Définir une classe CSS pour savoir si la section est ouverte ou fermée
     let className = "collapse";

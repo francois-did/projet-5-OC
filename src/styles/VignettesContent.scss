@@ -1,93 +1,192 @@
-.location-details-container{
-display: flex;
-width: 100%;
-justify-content: center;
-height: 270px;
-margin-top: 20px;
+.location-details-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 270px;  // Hauteur par défaut pour les grands écrans
+  margin-top: 20px;
+  margin-bottom: 30px;  // Ajoute une marge en bas du container pour éviter le chevauchement
 
-.location-details {
-
+  .location-details {
     display: flex;
     justify-content: space-between;
-    width: 63%;
+    width: 73%;
     align-items: center;
     height: 180px;
 
     // Style pour le titre et le p
     .titreAndTags h1 {
-      font-size: 2.5rem;  
-      color: #FF6F61;  
-      font-weight: bold;  
+      font-size: 2.5rem;
+      color: #FF6F61;
+      font-weight: bold;
       margin: 10px auto 0 auto;
     }
-  
-    .titreAndTags p{
-        font-size: 1.5em;
-        margin: 15px auto 25px auto;
+
+    .titreAndTags p {
+      font-size: 1.5em;
+      margin: 15px auto 25px auto;
     }
-    
+
     // Style pour chaque tag
     .tag {
-      background-color: #FF6F61;  
-      color: white;  
-      border-radius: 20px;  
-      padding: 5px 19px;  
-      font-size: 1.1rem;  
-      font-weight: bold;  
-      text-align: center;  
+      background-color: #FF6F61;
+      color: white;
+      border-radius: 20px;
+      padding: 5px 19px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-align: center;
       margin: 15px 25px 15px 0;
     }
 
     .photoAndStars {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 15px;
+    }
+
+    .host-info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 26px;
+    }
+
+    .host-name {
+      color: #FF6F61;
+      font-size: 1.3rem;
+    }
+
+    .host-picture {
+      border-radius: 50%;
+      object-fit: cover;
+      width: 75px;
+      height: 75px;
+      margin-left: 10px;
+    }
+
+    .rating {
+      display: flex;
+      gap: 5px;
+      justify-content: center;
+      font-size: 1.5rem;
+      align-items: center;
+    }
+
+    .star {
+      color: #e3e3e3;
+      font-size: 1.5em;
+    }
+
+    .star.filled {
+      color: #FF6F61;
+      font-size: 1.5em;
+    }
+  }
+
+  @media (max-width: 999px){
+
+    .location-details{
+
+      .titreAndTags{
+        margin-bottom: -60px;
+      }
+
+      .tags-container{
         display: flex;
-        flex-direction: column;  
-        align-items: center;  
-        
+        flex-wrap: wrap;
       }
-      
-      .host-info {
+
+      .photoAndStars{
+        margin-top: -10px;
+        margin-left: 15px;
+      }
+
+
+      .titreAndTags h1{
+        font-size: 2em;
+      }
+
+      .titreAndTags p{
+        font-size: 1.2em;
+      }
+
+      .tag{
+        font-size: 0.9em;
+      }
+
+    }
+  }
+
+  @media (max-width: 600px){
+    .host-info{
+      margin-right: 30px;
+    }
+  }
+
+  @media (max-width: 482px){
+    .location-details .titreAndTags{
+      margin-bottom: -90px;
+    }
+  }
+
+  
+
+
+
+
+
+  // Responsive adjustments for screens smaller than 768px
+  @media (max-width: 768px) {
+    height: 350px;  // Modifie la hauteur du container pour les petits écrans
+    justify-content: flex-start;
+    margin: 30px;
+
+    .location-details {
+      flex-direction: column;  // Empile les éléments verticalement
+      width: 90%;  // Pleine largeur sur mobile
+      align-items: flex-start;  // Aligne les éléments à gauche
+
+      .titreAndTags {
+        width: 100%;  // Assure que le titre occupe toute la largeur
+
+        h1 {
+          font-size: 1.8rem;  // Taille réduite pour les petits écrans
+        }
+
+        p {
+          font-size: 1.2em;  // Taille réduite du texte de localisation
+          margin-bottom: 15px;
+        }
+      }
+
+      .tags-container {
         display: flex;
-        align-items: center;  
-        justify-content: center;  
-        gap: 10px;  
-        margin-bottom: 26px;  
+        flex-wrap: wrap;  // Les tags se réorganisent en ligne sur mobile
+        gap: 10px;
+        margin-bottom: 100px;
+        width: 100%;  // Prend toute la largeur
       }
-      
-      .host-name {
-        color: #FF6F61;
-        font-size: 1.3rem;
-      }
-      
-      .host-picture {
-        border-radius: 50%;
-        object-fit: cover;
-        width: 75px;  
-        height: 75px;  
-        margin-left: 10px;
-      }
-      
-      .rating {
-        display: flex;
-        gap: 5px;  
-        justify-content: center;  
-        font-size: 1.5rem; 
+
+      .photoAndStars {
+        flex-direction: row-reverse;  // Les étoiles à gauche, la photo et le nom à droite
+        justify-content: space-between;
+        width: 100%;  // Prend toute la largeur
         align-items: center;
       }
-      
-      .star {
-        color: #e3e3e3;  
-        font-size: 1.5em;
+
+      .host-info {
+        display: flex;
+        align-items: center;  // Centre l'image de l'hôte et le nom
+        text-align: left;  // Garde l'alignement du texte à gauche
+        margin-bottom: 10px;
       }
-      
-      .star.filled {
-        color: #FF6F61;  
-        font-size: 1.5em;
+
+      .rating {
+        justify-content: flex-start;  // Alignement à gauche des étoiles
+        margin-top: 10px;
       }
-      
-      
-      
-
-
-
+    }
   }
 }

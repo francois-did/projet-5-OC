@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Collapse({ title, content }) {
+function Collapse({ title, content, className = "" }) {
     const [isOpen, setIsOpen] = useState(false);
 
     // Fonction qui change l'état entre ouvert et fermé
@@ -8,39 +8,31 @@ function Collapse({ title, content }) {
         setIsOpen(!isOpen);
     };
 
-    // Définir une classe CSS pour savoir si la section est ouverte ou fermée
-    let className = "collapse";
+    // Combiner la classe CSS passée en prop avec la classe "collapse"
+    let collapseClassName = `collapse ${className}`;
     if (isOpen) {
-        className += " open";
+        collapseClassName += " open";
     }
 
     // Définir un symbole pour indiquer si la section est ouverte ou fermée
     let symbol;
     if (isOpen) {
-        symbol = "▼"; // Flèche vers le haut (section ouverte)
+        symbol = "▼"; // Flèche vers le bas (section ouverte)
     } else {
-        symbol = "▲"; // Flèche vers le bas (section fermée)
-    }
-
-    // Afficher ou non le contenu
-    let contentSection;
-    if (isOpen) {
-        contentSection = (
-            <div className="collapse-content">
-                {content}
-            </div>
-        );
-    } else {
-        contentSection = null;
+        symbol = "▲"; // Flèche vers le haut (section fermée)
     }
 
     return (
-        <div className={className}>
+        <div className={collapseClassName}>
             <div className="collapse-title">
                 {title}
-                <span onClick={toggleCollapse} style={{ cursor: "pointer" }} >{symbol}</span> 
+                <span onClick={toggleCollapse} style={{ cursor: "pointer" }}>{symbol}</span>
             </div>
-            {contentSection}
+            {isOpen && (
+                <div className="collapse-content">
+                    {content}
+                </div>
+            )}
         </div>
     );
 }
