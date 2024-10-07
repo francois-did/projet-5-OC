@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
-import data from '../data/logementsJSON.json';
 import '../styles/Carousel.scss';
 
-function Carousel() {
+function Carousel({ pictures }) {
   const [currentImage, setImage] = useState(0);
-  const pictures = data[0].pictures;
 
   return (
     <div className="carousel-container">
-      {/* Afficher l'image */}
-      <img className="carousel-image" src={pictures[currentImage]} />
+      {/* Image */}
+      <img className="carousel-image" src={pictures[currentImage]} alt="carousel" />
 
       {/* Indicateur du numéro de l'image */}
       <div className="carousel-indicator">
@@ -20,13 +18,17 @@ function Carousel() {
       <button
         className="carousel-button carousel-button-next"
         onClick={() => {
-          setImage((currentImage===pictures.length-1)?0:(currentImage+1));
+          if (currentImage === pictures.length - 1) {
+            setImage(0);
+          } else {
+            setImage(currentImage + 1);
+          }
         }}
       >
         ›
       </button>
 
-      {/* Bouton precedent */}
+      {/* Bouton précédent */}
       <button
         className="carousel-button carousel-button-prev"
         onClick={() => {
@@ -44,5 +46,3 @@ function Carousel() {
 }
 
 export default Carousel;
-
-// (condition)?<vrai>:<faux>;

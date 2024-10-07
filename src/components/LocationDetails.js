@@ -14,20 +14,22 @@ function LocationDetails() {
   // Récupère l'ID du logement depuis l'URL
   const { id } = useParams();
 
-  // Trouver le logement correspondant dans le fichier JSON
+  // Trouver le logement dans le fichier JSON
   const logement = logements.find(logement => logement.id === id);
 
+ 
 
   return (
     <>
       <HeaderVignette />
 
-      <Carousel />
+      {/* Passer les images du logement au Carousel */}
+      <Carousel pictures={logement.pictures} />
       <VignettesContent />
 
-      {/* Utiliser Collapse avec les données du JSON */}
+      
       <div className="vignettes-collapse-container">
-        {/* Description dynamique */}
+        
         <Collapse 
           title="Description" 
           content={logement.description} 
@@ -38,15 +40,14 @@ function LocationDetails() {
         <Collapse 
           title="Équipements" 
           content={(
-        <ul>
-          {logement.equipments.map((equipment, index) => (
-          <li key={index}>{equipment}</li>
-          ))}
-        </ul>
-  )}
-  className="vignettes-collapse" 
-/>
-
+            <ul>
+              {logement.equipments.map((equipment, index) => (
+                <li key={index}>{equipment}</li>
+              ))}
+            </ul>
+          )}
+          className="vignettes-collapse" 
+        />
       </div>
 
       <FooterMax />

@@ -1,15 +1,14 @@
-// Conteneur principal du Carousel
+
 .carousel-container {
   position: relative;
   width: 73%; 
-  margin: 30px auto; 
-  overflow: hidden; 
+  margin: 0px auto 20px auto;  
   border-radius: 10px; 
   height: 350px;
 
-  // Disposition responsive pour les petits écrans
+  
   @media (max-width: 768px) {
-      width: 90%; // Passe à 90% de largeur pour les écrans plus petits
+      width: 90%; 
   }
 }
 
@@ -22,7 +21,7 @@
   object-fit: cover;
 }
 
-// Indicateur du numéro de l'image
+
 .carousel-indicator {
   position: absolute;
   bottom: 10px; 
@@ -35,7 +34,7 @@
   border-radius: 5px; 
 }
 
-// Boutons de navigation
+
 .carousel-button {
   position: absolute;
   top: 50%;
@@ -48,17 +47,17 @@
   z-index: 1; 
 }
 
-// Bouton précédent (gauche)
+
 .carousel-button-prev {
   left: 20px; 
 }
 
-// Bouton suivant (droite)
+
 .carousel-button-next {
   right: 20px; 
 }
 
-// Ajoute une légère ombre sur les flèches au survol pour plus de visibilité
+
 .carousel-button:hover {
   color: #f0f0f0; 
 }

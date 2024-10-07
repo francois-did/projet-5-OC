@@ -18,9 +18,9 @@ function CollapseVignettes({ title, content }) {
     // Définir un symbole pour indiquer si la section est ouverte ou fermée
     let symbol;
     if (isOpen) {
-        symbol = "▼"; // Flèche vers le haut (section ouverte)
+        symbol = "▼";
     } else {
-        symbol = "▲"; // Flèche vers le bas (section fermée)
+        symbol = "▲"; 
     }
 
     // Afficher ou non le contenu

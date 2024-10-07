@@ -14,12 +14,12 @@ function Collapse({ title, content, className = "" }) {
         collapseClassName += " open";
     }
 
-    // Définir un symbole pour indiquer si la section est ouverte ou fermée
+    
     let symbol;
     if (isOpen) {
-        symbol = "▼"; // Flèche vers le bas (section ouverte)
+        symbol = "▼"; 
     } else {
-        symbol = "▲"; // Flèche vers le haut (section fermée)
+        symbol = "▲"; 
     }
 
     return (

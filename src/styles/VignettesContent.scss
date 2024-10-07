@@ -2,9 +2,7 @@
   display: flex;
   width: 100%;
   justify-content: center;
-  height: 270px;  // Hauteur par défaut pour les grands écrans
-  margin-top: 20px;
-  margin-bottom: 30px;  // Ajoute une marge en bas du container pour éviter le chevauchement
+  height: 230px;    
 
   .location-details {
     display: flex;
@@ -13,7 +11,7 @@
     align-items: center;
     height: 180px;
 
-    // Style pour le titre et le p
+    
     .titreAndTags h1 {
       font-size: 2.5rem;
       color: #FF6F61;
@@ -26,7 +24,7 @@
       margin: 15px auto 25px auto;
     }
 
-    // Style pour chaque tag
+    
     .tag {
       background-color: #FF6F61;
       color: white;
@@ -129,6 +127,14 @@
     .location-details .titreAndTags{
       margin-bottom: -90px;
     }
+
+    .star.filled{
+      font-size: 1em !important; 
+    }
+
+    .star {
+      font-size: 1em !important; 
+    }
   }
 
   
@@ -137,54 +143,54 @@
 
 
 
-  // Responsive adjustments for screens smaller than 768px
+ 
   @media (max-width: 768px) {
-    height: 350px;  // Modifie la hauteur du container pour les petits écrans
+    height: 350px;  
     justify-content: flex-start;
     margin: 30px;
 
     .location-details {
-      flex-direction: column;  // Empile les éléments verticalement
-      width: 90%;  // Pleine largeur sur mobile
-      align-items: flex-start;  // Aligne les éléments à gauche
+      flex-direction: column;  
+      width: 90%;  
+      align-items: flex-start;  
 
       .titreAndTags {
-        width: 100%;  // Assure que le titre occupe toute la largeur
+        width: 100%;  
 
         h1 {
-          font-size: 1.8rem;  // Taille réduite pour les petits écrans
+          font-size: 1.8rem;  
         }
 
         p {
-          font-size: 1.2em;  // Taille réduite du texte de localisation
+          font-size: 1.2em;  
           margin-bottom: 15px;
         }
       }
 
       .tags-container {
         display: flex;
-        flex-wrap: wrap;  // Les tags se réorganisent en ligne sur mobile
+        flex-wrap: wrap; 
         gap: 10px;
         margin-bottom: 100px;
-        width: 100%;  // Prend toute la largeur
+        width: 100%;  
       }
 
       .photoAndStars {
-        flex-direction: row-reverse;  // Les étoiles à gauche, la photo et le nom à droite
+        flex-direction: row-reverse; 
         justify-content: space-between;
-        width: 100%;  // Prend toute la largeur
+        width: 100%;  
         align-items: center;
       }
 
       .host-info {
         display: flex;
-        align-items: center;  // Centre l'image de l'hôte et le nom
-        text-align: left;  // Garde l'alignement du texte à gauche
+        align-items: center;  
+        text-align: left;  
         margin-bottom: 10px;
       }
 
       .rating {
-        justify-content: flex-start;  // Alignement à gauche des étoiles
+        justify-content: flex-start; 
         margin-top: 10px;
       }
     }

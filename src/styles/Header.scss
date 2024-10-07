@@ -1,22 +1,22 @@
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Assure l'alignement vertical */
+  align-items: center; 
   background-color: #fff;
   width: 80%;
-  margin: 10px auto 0px auto;
+  margin: 0 auto;
 
   h1 {
     display: flex;
-    align-items: center; /* Centrer l'image à l'intérieur du h1 */
-    margin: 0; /* Supprime les marges */
-    line-height: 100px; /* Ajuste la hauteur de ligne pour centrer l'image */
+    align-items: center; 
+    margin: 0; 
+    line-height: 100px; 
   }
 
   h1 img {
     height: 100px;
-    vertical-align: middle; /* Assure un alignement vertical */
-    margin-bottom: -10px; /* Ajuste la position vers le bas */
+    vertical-align: middle; 
+    margin-bottom: -10px; 
     margin-top: 50px;
   }
 
@@ -27,7 +27,7 @@
 
     .header-logo h1 {
       font-size: 2rem;
-      line-height: normal; /* Réinitialise la hauteur de ligne sur mobile */
+      line-height: normal; 
     }
 
     .header-nav ul {
@@ -46,7 +46,7 @@
 
     .header-logo h1 {
       font-size: 1.8rem; 
-      line-height: normal; /* Réinitialise la hauteur de ligne sur mobile */
+      line-height: normal; 
     }
 
     .header-nav ul {
