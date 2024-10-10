@@ -1,0 +1,26 @@
+.location-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30px;
+  
+    .location-details {
+      width: 73%;
+      margin-bottom: 30px;
+    }
+  
+    .vignettes-collapse-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px; // Ajoute un espace entre les collapses en desktop
+      width: 100%; // Assure que les collapses occupent toute la largeur
+  
+      @media (max-width: 768px) {
+        flex-direction: column; // En responsive, ils passent à la verticale
+        gap: 20px;
+        width: 90%;
+      }
+    }
+  }
+  

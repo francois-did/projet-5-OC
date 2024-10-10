@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import '../styles/CollapseVignettes.scss';
 
 function CollapseVignettes({ title, content }) {
@@ -7,7 +9,7 @@ function CollapseVignettes({ title, content }) {
     // Fonction qui change l'état entre ouvert et fermé
     const toggleCollapse = () => {
         setIsOpen(!isOpen);
-    }; 
+    };
 
     // Définir une classe CSS pour savoir si la section est ouverte ou fermée
     let className = "collapse";
@@ -15,33 +17,19 @@ function CollapseVignettes({ title, content }) {
         className += " open";
     }
 
-    // Définir un symbole pour indiquer si la section est ouverte ou fermée
-    let symbol;
-    if (isOpen) {
-        symbol = "▼";
-    } else {
-        symbol = "▲"; 
-    }
-
-    // Afficher ou non le contenu
-    let contentSection;
-    if (isOpen) {
-        contentSection = (
-            <div className="collapse-content">
-                {content}
-            </div>
-        );
-    } else {
-        contentSection = null;
-    }
-
     return (
         <div className={className}>
             <div className="collapse-title">
                 {title}
-                <span onClick={toggleCollapse} style={{ cursor: "pointer" }} >{symbol}</span> 
+                <span onClick={toggleCollapse} style={{ cursor: "pointer" }}>
+                    <FontAwesomeIcon icon={isOpen ? faChevronDown : faChevronUp} />
+                </span>
             </div>
-            {contentSection}
+            {isOpen && (
+                <div className="collapse-content">
+                    {content}
+                </div>
+            )}
         </div>
     );
 }

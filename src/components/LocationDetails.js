@@ -1,5 +1,5 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import '../styles/LocationDetails.scss';
 import HeaderVignette from './HeaderVignettes';
 import '../styles/HeaderVignettes.scss';
@@ -13,11 +13,22 @@ import logements from '../data/logementsJSON.json';
 function LocationDetails() {
   // Récupère l'ID du logement depuis l'URL
   const { id } = useParams();
+  const navigate = useNavigate();
 
   // Trouver le logement dans le fichier JSON
-  const logement = logements.find(logement => logement.id === id);
+  const logement = logements.find((logement) => logement.id === id);
 
- 
+  // Redirection si le logement n'existe pas
+  useEffect(() => {
+    if (!logement) {
+      navigate("/404", { replace: true }); 
+    }
+  }, [logement, navigate]);
+
+  // Si le logement n'existe pas, retourner null
+  if (!logement) {
+    return null; 
+  }
 
   return (
     <>
@@ -27,9 +38,7 @@ function LocationDetails() {
       <Carousel pictures={logement.pictures} />
       <VignettesContent />
 
-      
       <div className="vignettes-collapse-container">
-        
         <Collapse 
           title="Description" 
           content={logement.description} 

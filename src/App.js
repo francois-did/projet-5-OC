@@ -5,7 +5,6 @@ import About from './components/About';
 import NotFound from './components/NotFound';
 import LocationDetails from './components/LocationDetails';
 import './App.css';
- 
 
 function App() {
   return (
@@ -13,7 +12,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/location/:id" element={<LocationDetails />} /> 
+        <Route path="/location/:id" element={<LocationDetails />} />
+        <Route path="/404" element={<NotFound />} /> 
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
@@ -21,4 +21,3 @@ function App() {
 }
 
 export default App;
- 

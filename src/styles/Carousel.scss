@@ -1,4 +1,3 @@
-
 .carousel-container {
   position: relative;
   width: 73%; 
@@ -6,9 +5,8 @@
   border-radius: 10px; 
   height: 350px;
 
-  
   @media (max-width: 768px) {
-      width: 90%; 
+    width: 90%; 
   }
 }
 
@@ -21,7 +19,7 @@
   object-fit: cover;
 }
 
-
+// Indicateur du numéro d'image
 .carousel-indicator {
   position: absolute;
   bottom: 10px; 
@@ -29,12 +27,17 @@
   transform: translateX(-50%); 
   color: white; 
   font-size: 16px; 
-  background-color: rgba(0, 0, 0, 0.5);
   padding: 5px 10px; 
   border-radius: 5px; 
+  background-color: transparent; /* Suppression du fond noir */
+
+  // Masquer l'indicateur en version mobile
+  @media (max-width: 768px) {
+    display: none; /* Masque l'indicateur en dessous de 768px */
+  }
 }
 
-
+// Boutons de navigation
 .carousel-button {
   position: absolute;
   top: 50%;
@@ -47,16 +50,13 @@
   z-index: 1; 
 }
 
-
 .carousel-button-prev {
   left: 20px; 
 }
 
-
 .carousel-button-next {
   right: 20px; 
 }
-
 
 .carousel-button:hover {
   color: #f0f0f0; 

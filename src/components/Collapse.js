@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 function Collapse({ title, content, className = "" }) {
     const [isOpen, setIsOpen] = useState(false);
@@ -14,19 +16,13 @@ function Collapse({ title, content, className = "" }) {
         collapseClassName += " open";
     }
 
-    
-    let symbol;
-    if (isOpen) {
-        symbol = "▼"; 
-    } else {
-        symbol = "▲"; 
-    }
-
     return (
         <div className={collapseClassName}>
             <div className="collapse-title">
                 {title}
-                <span onClick={toggleCollapse} style={{ cursor: "pointer" }}>{symbol}</span>
+                <span onClick={toggleCollapse} style={{ cursor: "pointer" }}>
+                    <FontAwesomeIcon icon={isOpen ? faChevronDown : faChevronUp} />
+                </span>
             </div>
             {isOpen && (
                 <div className="collapse-content">
